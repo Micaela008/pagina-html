@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="assets/images/tanjiro.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="styles.css">
+    <title> Villa Luces</title>
+
+  <style>
+
+    .container{
+      background-color:  rgba(207, 216, 207, 0.507);
+    }
+    .custom-input{
+       width: 180px;
+    }
+    .navbar-nav .nav-link {
+      color: black;
+    }
+
+    .nav-item {
+      margin-bottom: 10px;
+    }
+      
+    footer {
+    bottom: 300px;
+    left: 1000px;
+    width: 100%;
+    background-color: #c0e0ff;
+    padding: 10px 0;
+    }
+    hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+    height: 0;
+    }
+
+
+    
+
+  </style>
+
+
+  
+</head>
+
+<body>
+    <header>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div id="inicio" class="container">
+            <div class="text-center center-block">
+              <div class="social">
+                <a href="#" target="_blank" style="color: black;"><i
+                    class="fa fa-phone -square fa-1x social"></i></a>
+                <a href="#" target="_blank" style="color:#FF0000; background-color:rgba(207, 216, 207, 0.507);"><i
+                    class="fa fa-youtube-square fa-1x social"></i></a>
+                <a href="3" target="_blank"><i
+                    class="fa fa-facebook-square fa-1x social"></i></a>
+                <a href="#" target="_blank"><i
+                    class="fa fa-whatsapp -square fa-1x social" style="color: #25D366; background-color: rgba(207, 216, 207, 0.507);"></i></a>
+              </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto" style="margin-bottom: 5px;;">
+                <li class="nav-item">
+                  <a class="nav-link" href="Inicio.html" id="inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#propiedades">Propiedades</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contacto" id="Contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#lugares">Lugares para visitar</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+      
+
+  <main>
+    <section class="hero-section">
+        <div class="hero-image"  style="background-image: url('imagenes/fondo3.jpg');
+         background-size:cover; background-position: center; height: 10cm; width: 100pc;">
+          
+            <div class="row 5" style="position: relative; top: 350px; left: 50px;" >
+              <div class="form-group" style="padding-right: 20px;" >
+                <select class="form-control custom-input" id="propiedad" name="propiedad">
+                  <option value="">propiedades</option>
+                  <option value="p1">Villa Elena</option>
+                  <option value="p2">Villa Palmera </option>
+                  <option value="p3">Villa Nana</option>
+                  <option value="p4">Villa Colinas</option>
+                  <option value="p5">Villa Flor</option>
+                  <option value="p6">Villa Paloma</option>
+                  <option value="p7">Villa Perla</option>
+                </select>
+              </div>
+                <div class="form-group" style="padding-right: 20px;" >
+                    <input type="date" class="form-control custom-input" id="fecha-llegada" name="fecha-llegada" placeholder="Llegada">
+                </div>
+                  <br>
+                <div class="form-group" style="padding-right: 20px;" >
+                    <input type="date" class="form-control custom-input" id="fecha-salida" name="fecha-salida" placeholder="Salida">
+                </div>
+                  
+                <div class="form-group" style="padding-right: 20px;" >
+                    <input type="number" class="form-control custom-input" id="num-adultos" name="num-adultos" min="1" max="10" placeholder="Adultos">
+                </div>
+                  
+                <div class="form-group" style="padding-right: 20px;" >
+                    <input type="number" class="form-control custom-input" id="num-ninos" name="num-ninos" min="0" max="10" placeholder="Niños">
+                </div>
+                  
+                <div class="form-group" style="padding-right: 20px;" >
+                    <input type="text" class="form-control custom-input" id="precio-total" name="precio-total" readonly placeholder="RD$">
+                </div>
+                  
+                <button type="submit" class="btn btn-primary" style="height: 3pc;">Reservar</button>                  
+            </div>
+
+            <script>
+              // Lista de propiedades con sus precios
+              var propiedades = {
+                p1:$2000,
+                p1:$4000,
+                p3:$300,
+                p4:$200,
+                p5:$1000,
+                p6:$2000,
+                p7:$250
+                  
+                };
+
+                // Función que calcula el precio total
+                function calcularPrecioTotal() {
+                var propiedadSeleccionada = document.getElementById("propiedad").value;
+                var precioPropiedad = propiedades[propiedadSeleccionada];
+                var fechaLlegada = new Date(document.getElementById("fecha-llegada").value);
+                var fechaSalida = new Date(document.getElementById("fecha-salida").value);
+                var numAdultos = parseInt(document.getElementById("num-adultos").value);
+                var numNinos = parseInt(document.getElementById("num-ninos").value);
+                var dias = (fechaSalida - fechaLlegada) / (1000 * 60 * 60 * 24); // Calcular número de días
+                var precioTotal = precioPropiedad * dias * (numAdultos + numNinos); // Calcular precio total
+                document.getElementById("precio-total").value = "RD$" + precioTotal.toFixed(2); // Mostrar precio total en el input correspondiente
+                } 
+
+                // Escuchar el evento 'change
+
+            </script>
+            
+    </section>
+
+    <head>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+      <script src="https://unpkg.com/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>   
+
+  </main>
+
+    <h2 class="mb-3 pb-3 text-center" id="propiedades" style="margin-top: 200px;  background-color: rgba(207, 216, 207, 0.507);"> Nuestras Propiedades</h2>
+    <hr>
+    
+    <div class="row">
+      <div class="card-group col" id="propiedades">
+        <div id="carousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imagenes/5.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/55.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/555.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Villa Elena</h5>
+              <p class="card-text"></p>
+              <h6 class="card-subtitle mb-2 text-muted">$2,000US/noche</h6>
+              <a href="p1"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+              <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+            </div>
+            
+          </div>
+          <button class="carousel-control" type="button" data-bs-target="#carousel1" data-bs-slide="">
+            <span class="carousel-control" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control" type="button" data-bs-target="#carousel1" data-bs-slide="">
+            <span class="carousel-control" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    
+      <div class="col">
+        <div id="carousel2" class="carousel slide" data-bs-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imagenes/2.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/22.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/222.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Villa Palmeras</h5>
+              <p class="card-text"></p>
+              <h6 class="card-subtitle mb-2 text-muted">$400US/noche</h6>
+              <a href="p2"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+              <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+            <span class="carousel-control-next" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          </div>
+
+          <br>
+          <div class="col">
+            <div id="carousel5" class="carousel slide" data-bs-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="imagenes/1c6ee700-5186-4e32-a9ff-e16c16a2727b.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/34a3d59a-f5f3-4760-924c-60f79f16a2bf.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/3a9b6b52-4d23-435a-b40e-d56d168ae0f8.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Villa Colinas</h5>
+                  <p class="card-text"></p>
+                  <h6 class="card-subtitle mb-2 text-muted">$200US/noche</h6>
+                  <a href="p3"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+                  <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel5" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel5" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            
+            </div> 
+            <br>
+            
+
+          </div>
+          <div class="col">
+            <div id="carousel8" class="carousel slide" data-bs-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="imagenes/77.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/777.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/7777.webp" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Villa Paloma</h5>
+                <p class="card-text"></p>
+                <h6 class="card-subtitle mb-2 text-muted">$2,000US/noche</h6>
+                <a href="p4"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+                <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouse8" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel8" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+    
+              </div> 
+            </div>
+          
+        </div>
+    
+      <div class="col">
+        <div id="carousel3" class="carousel slide" data-bs-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imagenes/4.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/4.5.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/444.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Villa Nana</h5>
+              <p class="card-text"></p>
+              <h6 class="card-subtitle mb-2 text-muted">$300US/noche/h6>
+              <a href="p5"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+              <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          </div> 
+          <br>
+          <div class="col">
+            <div id="carousel6" class="carousel slide" data-bs-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="imagenes/6.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/66.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="imagenes/666.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Villa Flor</h5>
+                  <p class="card-text"></p>
+                  <h6 class="card-subtitle mb-2 text-muted">$1,000US/noche</h6>
+                  <a href="p6"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+                  <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel6" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel6" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>  
+            <br>
+
+            <div class="col">
+              <div id="carousel9" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="imagenes/8.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imagenes/88.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imagenes/888.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Villa Perla</h5>
+                    <p class="card-text"></p>
+                    <h6 class="card-subtitle mb-2 text-muted">$250US/noche</h6>
+                    <a href="p7"><button type="submit" class="btn btn-primary mr-3">Descripcion</button> </a>
+                    <p class="card-text"><small class="text-muted">Actualizado hace 2 días</small></p>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel9" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel9" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+      
+              </div> 
+            </div>
+          </div>
+
+        </div>
+              
+      </div>
+    
+    </div>
+    <br>
+
+    <h2 class="mb-3 pb-3 text-center" style="margin-top: 90px;  background-color: rgba(207, 216, 207, 0.507);">Lugares para visitar en nuestro paraiso</h2>
+    <div id="lugares" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imagenes/las ballenas.jpg" class="d-block w-50 mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 style="background-color: rgba(207, 216, 207, 0.507); display: inline-block; padding: 5px;">Playa las ballenas</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/mosquito.webp" class="d-block w-50 mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 style="background-color: rgba(207, 216, 207, 0.507); display: inline-block; padding: 5px;">EL MOSQUITO BAR</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/porto.jpg" class="d-block w-50 mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 style="background-color: rgba(207, 216, 207, 0.507); display: inline-block; padding: 5px;">PORTO BAR-RESTURANTE </h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagenes/los pescadores.jpg" class="d-block w-50 mx-auto" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 style="background-color: rgba(207, 216, 207, 0.507); display: inline-block; padding: 5px;">PUEBLO DE LOS PESCADORES </h5>
+          </div>
+      </div>
+      <button class="carousel-control" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control" aria-hidden="true"></span>
+      </button>
+    </div>
+    
+    <footer>
+      <div class="container" style="font-size: 2px;">
+        <div class="row" >
+          <div class="col-md-4">
+            <h3 style="font-size: medium;">Sobre Nosotros</h3>
+            <p>Somos una empresa dedicada a proporcionar soluciones tecnológicas para mejorar la eficiencia de tu negocio.</p>
+            <a href="Nosotros.html"><button type="submit" class="btn btn-primary mr-3">Saber mas</button> </a>
+          </div>
+          <div class="col-md-4">
+            <h3 style="font-size: medium;">Enlaces Importantes</h3>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#lugares">Lugares para visitar</a></li>
+              <li><a href="Nosotros.html">Nosotros</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li><a href="#propiedades">Propiedades</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 style="font-size: medium;">Contacto</h3>
+            <p>Correo Electrónico: VillasLuces20@email.com</p>
+            <p>Teléfono: 1-800-555-5555</p>
+            <p>Dirección: Calle Palelmo #123, Ciudad Santo Domingo, Republica Dominicana</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+            <p class="text-center">Derechos Reservados &copy; 2023 Vilas Luces </p>
+          </div>
+        </div>
+      </div>
+    </footer>  
+
+</body>
